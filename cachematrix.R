@@ -2,7 +2,7 @@
 ## the subsequent request for matrix inversion will be retrieved from cache
 
 
-## makeCacheMatrix will craete a special matrix object that can cache its inverse 
+## makeCacheMatrix will create a special matrix object that can cache its inverse 
 
 makeCacheMatrix <- function(x = matrix()) {
         invMatrix <- NULL
@@ -11,7 +11,7 @@ makeCacheMatrix <- function(x = matrix()) {
                 invMatrix <<- NULL
         }
         get <- function() x
-        setMatrix <- function(matrix) invMatrix <<- matrix
+        setMatrix <- function(inverse) invMatrix <<- inverse
         getMatrix <- function() invMatrix
         list(set = set, get = get, setMatrix = setMatrix, getMatrix = getMatrix)
 }
